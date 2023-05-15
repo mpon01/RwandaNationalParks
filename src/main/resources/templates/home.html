@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rwanda National Parks & Wildlife</title>
+    <link rel="stylesheet" th:href="@{../css/home.css}" href="../static/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <img th:src="@{../images/logo.png}" src="../static/images/logo.png" width="120" height="120">
+            <h1>The land of a thousand hills</h1>
+            <h4>
+                <button class="btn"><a th:href="@{/user/login}">Login</a></button>
+
+                <button class="btn"><a th:href="@{/user/sign-up}">Signup</a></button>
+            </h4>
+            <h4></h4>
+        </div>
+    </div>
+
+
+</body>
+</html>

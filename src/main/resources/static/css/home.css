@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&family=Rubik:wght@300&display=swap');
+
+*{
+    font-family: Poppins, sans-serif;
+}
+
+body{
+    background-image: url("../images/gir.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.75);
+    background-blend-mode: overlay;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the height of the container to fill the viewport */
+}
+
+.text {
+    text-align: center; /* Center the text horizontally */
+    color: white; /* Set the text color to white */
+}
+
+img{
+    border-radius: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
+}
+
+.btn {
+    background-color: rgba(24, 65, 26, 0.9);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #233f0c;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #f9f9f9;
+}

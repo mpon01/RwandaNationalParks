@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | Home Page</title>
+    <link rel="stylesheet" th:href="@{../../css/admin-home.css}" href="../../static/css/admin-home.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="side-panel">
+            <ul>
+                <li>Welcome Admin, [[${#request.userPrincipal.principal.username}]]</li>
+                <li>
+                    <form th:action="@{/admin/logout}" method="post">
+                        <button type="submit">logout</button>
+                    </form>
+                </li>
+                <li><a th:href="@{/admin/home}">Home</a></li>
+                <li><a th:href="@{/admin/show-users}">Users</a></li>
+                <li><a th:href="@{/admin/show-parks}">Parks</a></li>
+                <li><a th:href="@{/admin/show-animals}">Animals</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Welcome to the Admin Control Panel</h1>
+            <p>This is where you can manage your website or application.</p>
+        </div>
+    </div>
+</body>
+</html>

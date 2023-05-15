@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+*{
+    font-family: Poppins,sans-serif;
+}
+
+/* Set up a container for the whole dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Define the styles for the side panel */
+.side-panel {
+    flex: 1;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    min-width: 150px;
+}
+
+/* Define the styles for the main content area */
+.content {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* Add some styles for responsive design */
+@media only screen and (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .side-panel, .content {
+        flex: 1;
+        min-width: auto;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #333;
+}

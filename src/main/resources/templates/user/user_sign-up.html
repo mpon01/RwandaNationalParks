@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User | Sign Up</title>
+    <link rel="stylesheet" th:href="@{../../css/signup.css}" href="../../static/css/signup.css">
+</head>
+<body>
+<div class="login-container">
+    <h4><a th:href="@{/}">Back home</a></h4>
+        <h2>Sign Up</h2>
+        <form id="form" th:action="@{/user/signup}" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div th:if="${param.error}">
+                <h4 style="color: #233f0c">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</h4>
+            </div>
+            <button type="submit" class="btn">< Sign up</button><br>
+            <a th:href="@{/user/login}">Have an account? Log in</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

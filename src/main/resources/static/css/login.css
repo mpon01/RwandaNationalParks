@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+*{
+    font-family: Poppins,sans-serif;
+}
+/* Global styles */
+body {
+    background-image: url("../images/login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
+}
+
+/* Login container */
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Login form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input[type="email"], input[type="password"] {
+    padding: 10px;
+    border: none;
+    background-color: #f9f9f9;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+/* Login button styles */
+.btn {
+    background-color: #0c210d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #233f0c;
+}
+
+a{
+    color: #0c210d;
+}
+
+a:hover{
+    color: #233f0c;
+}
