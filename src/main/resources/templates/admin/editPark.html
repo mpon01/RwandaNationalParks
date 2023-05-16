@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Park</title>
+    <link rel="stylesheet" th:href="@{../../css/park.css}" href="../../static/css/park.css">
+    <link rel="icon" th:href="@{../../images/logo.png}" href="../../static/images/logo.png">
+</head>
+<body>
+<div class="login-container">
+    <h2>EDIT PARK</h2>
+    <h4><a href="#" onclick="history.back();">Go back</a></h4>
+    <br>
+    <form th:action="@{/admin/add-park}" th:object="${park}" method="post" >
+        <div class="form-group">
+            <select th:field="*{parkName}" name="parkName" required >
+                <option value="">Park Name</option>
+                <option value="Akagera">Akagera National Park</option>
+                <option value="Nyungwe">Nyungwe National Park</option>
+                <option value="Volcanoes">Volcanoes National Park</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{location}" name="location" placeholder="Location" required/> <br>
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{description}" name="description" placeholder="Description" required/> <br>
+        </div>
+        <div class="form-group">
+            <input type="number" th:field="*{entranceFee}" name="entranceFee" placeholder="Entrance Fee (Rwf.)" required/> <br>
+        </div>
+
+        <button type="submit" class="btn">Save</button>
+    </form>
+</div>
+</body>
+</html>

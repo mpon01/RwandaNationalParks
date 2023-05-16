@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User | Sign Up</title>
+    <link rel="stylesheet" th:href="@{../../css/signup.css}" href="../../static/css/signup.css">
+    <link rel="icon" th:href="@{../../images/logo.png}" href="../../static/images/logo.png">
+</head>
+<body>
+<div class="login-container">
+    <h4><a th:href="@{/}">Back home</a></h4>
+        <h2>Sign Up</h2>
+        <form id="form" th:action="@{/user/register}" th:object="${user}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="upload-btn-wrapper">
+                <button class="btn2">Add Profile photo</button>
+                <input type="file" name="image" accept="image/png, image/jpg, image/jpeg" required />
+            </div>
+            <div th:if="${param.error}">
+                <h4 style="color: #233f0c">Error creating account.</h4>
+            </div>
+            <button type="submit" class="btn">< Sign up</button><br>
+            <a th:href="@{/user/login}">Have an account? Log in</a>
+        </form>
+    </div>
+</body>
+</html>

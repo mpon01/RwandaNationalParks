@@ -3,26 +3,10 @@
     font-family: Poppins,sans-serif;
 }
 
-/* Set up a container for the whole dashboard */
-.dashboard-container {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-}
-
-/* Define the styles for the side panel */
-.side-panel {
-    flex: 1;
-    background-color: #000;
-    color: white;
-    padding: 20px;
-    min-width: 150px;
-}
-
 /* Define the styles for the main content area */
 .content {
     flex: 3;
-    background-color: #ffffff;
+    background-color: #f4f5ff;
     padding: 20px;
 }
 
@@ -37,24 +21,81 @@
     }
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+/* Set up a container for the whole dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #f4f5ff;
 }
 
-li {
+/* Define the styles for the side panel */
+.side-panel {
+    flex: 1;
+    background-color: #000;
+    padding: 20px;
+    min-width: 200px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Define the styles for the main menu */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-list li {
     margin-bottom: 10px;
 }
 
-a {
-    display: block;
-    padding: 10px;
-    color: white;
+.menu-list a {
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    color: white;
 }
 
-a:hover {
-    background-color: #333;
+/* Define the styles for the sub-menu */
+.sub-menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.sub-menu li {
+    margin-bottom: 5px;
+}
+
+.sub-menu a {
+    text-decoration: none;
+    color: #888888;
+    padding-left: 10px;
+}
+
+.sub-menu a:hover {
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(196, 152, 152, 0.3);
+}
+
+.btn:hover {
+    box-shadow: 0 3px 6px rgba(187, 154, 154, 0.3);
+    color: white;
+}
+
+.divs{
+    background-color: black;
+    border-radius: 15px;
+    width: 60%;
+    text-align: center;
+    color: white;
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Parks In Rwanda</title>
+    <link rel="stylesheet" th:href="@{../../css/allParks.css}" href="../../static/css/allParks.css">
+    <link rel="icon" th:href="@{../../images/logo.png}" href="../../static/images/logo.png">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a th:href="@{/user/home}">Home</a></li>
+        <li class="dropdown">
+            <a href="#">View</a>
+            <ul>
+                <li><a th:href="@{/user/parks}">Parks in Rwanda</a></li>
+                <li><a th:href="@{/user/animals}">Animals in Rwanda</a></li>
+            </ul>
+        </li>
+        <li><a th:href="@{/user/book-visit}">Book a visit</a></li>
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        <li>Welcome, [[${#request.userPrincipal.principal.username}]]</li>
+        <li>
+            <form th:action="@{/user/logout}" method="post">
+                <button type="submit" class="btn2">logout</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+<br><br><br>
+<h1>Parks in Rwanda</h1>
+<br>
+
+<h3>Akagera National park</h3>
+<img src="../../static/images/akagera.jpg" th:src="@{../../images/akagera.jpg}" width="600" height="400">
+<h5><span style="font-size: 16px;">Location: </span></h5>
+        <h5><span style="font-size: 16px;">Entrance Fee: </span>30,000 Rwf</h5>
+        <h5><span style="font-size: 16px;">Description: </span>
+            <p>Akagera National Park is located in eastern Rwanda along the international border with Tanzania.</p>
+              <p>  It covers 1,122 km² (433 sq mi) and includes savannah, montane and swamp habitats.</p>
+              <p>  The park is named for the Kagera River which flows along its eastern boundary feeding into Lake Ihema and several smaller lakes.</p>
+        </h5>
+        <h5><span style="font-size: 16px;">Working Days: </span>Monday - Saturday</h5>
+        <h5><span style="font-size: 16px;">Working Hours: </span>6AM - 6PM</h5>
+
+
+<br><br><br>
+
+<h3>Nyungwe National park</h3>
+<img src="../../static/images/nyungwe.jpg" th:src="@{../../images/nyungwe.jpg}" width="600" height="400">
+<h5><span style="font-size: 16px;">Location: </span>KN6, Rusizi, Rwanda </h5>
+<h5><span style="font-size: 16px;">Entrance Fee: </span>25,000 Rwf for kids, 35,000Rwf for Adults</h5>
+<h5><span style="font-size: 16px;">Description: </span>
+<p>One of the oldest rainforests in Africa, Nyungwe is rich in biodiversity and spectacularly beautiful. </p>
+    <p>  The mountainous region is teaming with wildlife, including a small population of chimpanzees as well as 12 other species of primate,</p>
+    <p> including the L’Hoest’s monkey endemic to the Albertine Rift.</p>
+</h5>
+<h5><span style="font-size: 16px;">Working Days: </span> Monday - Saturday</h5>
+<h5><span style="font-size: 16px;">Working Hours: </span> 9AM - 5PM</h5>
+
+
+<br><br><br>
+
+<h3>Volcanoes National park</h3>
+<img src="../../static/images/volcanoes.jpg" th:src="@{../../images/volcanoes.jpg}" width="600" height="400">
+
+        <h5><span style="font-size: 16px;">Location: </span></h5>
+        <h5><span style="font-size: 16px;">Entrance Fee: 50,000 Rwf</span></h5>
+        <h5><span style="font-size: 16px;">Description: </span>
+        <p>Situated in the far northwest of Rwanda, Volcanoes National Park protects the steep slopes of this magnificent mountain range – home </p>
+        <p>of the endangered mountain gorilla and a rich mosaic of montane ecosystems,</p>
+        <p> which embrace evergreen and bamboo forest, open grassland, swamp and heath.</p>
+        </h5>
+        <h5><span style="font-size: 16px;">Working Days: </span> Monday - Saturday</h5>
+        <h5><span style="font-size: 16px;">Working Hours: </span> 9AM - 6PM</h5>
+<br>
+<h4>For more information visit the official <a style="color: black; text-decoration: underline;" href="https://www.visitrwanda.com/destinations/">Visit Rwanda</a> website.</h4>
+<a th:href="@{/user/parks}">Back to top</a>
+</body>
+</html>
+
+<!--<table>-->
+<!--    <tr th:each="park : ${parks}">-->
+<!--        <th>Name:</th>-->
+<!--        <td th:text="${park.parkName}"></td>-->
+<!--    </tr>-->
+<!--    <tr th:each="park : ${parks}">-->
+<!--        <th>Location:</th>-->
+<!--        <td th:text="${park.location}"></td>-->
+<!--    </tr>-->
+<!--</table>-->

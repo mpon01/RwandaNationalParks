@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <title>User | Home Page</title>
     <link rel="stylesheet" th:href="@{../../css/user-home.css}" href="../../static/css/user-home.css">
+    <link rel="icon" th:href="@{../../images/logo.png}" href="../../static/images/logo.png">
 </head>
 <body>
-<div style="text-align: center;">
     <nav>
         <ul>
             <li><a th:href="@{/user/home}">Home</a></li>
             <li class="dropdown">
-                <a href="#">National Parks</a>
+                <a href="#">View</a>
                 <ul>
-                    <li><a th:href="@{/user/akagera}">Akagera National Park</a></li>
-                    <li><a th:href="@{/user/nyungwe}">Nyungwe National Park</a></li>
-                    <li><a th:href="@{/user/volcanoes}">Volcanoes National Park</a></li>
+                    <li><a th:href="@{/user/parks}">Parks in Rwanda</a></li>
+                    <li><a th:href="@{/user/animals}">Animals in Rwanda</a></li>
                 </ul>
             </li>
             <li><a th:href="@{/user/book-visit}">Book a visit</a></li>
@@ -23,13 +22,22 @@
             <li>Welcome, [[${#request.userPrincipal.principal.username}]]</li>
             <li>
                 <form th:action="@{/user/logout}" method="post">
-                    <button type="submit">logout</button>
+                    <button type="submit" class="btn">logout</button>
                 </form>
             </li>
         </ul>
     </nav>
     <br><br><br>
-
-</div>
+    <h1>My VISITS</h1>
+    <table>
+        <tr th:each="visit : ${visit}">
+            <th>Name:</th>
+            <td th:text="${person.name}"></td>
+        </tr>
+        <tr th:each="person : ${persons}">
+            <th>Age:</th>
+            <td th:text="${person.age}"></td>
+        </tr>
+    </table>
 </body>
 </html>

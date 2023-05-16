@@ -4,7 +4,8 @@
 }
 
 body{
-    background-color: #f4f5ff;}
+    background-image: url("../../static/images/bg.png");
+}
 
 nav {
     background-color: #000;
@@ -48,24 +49,6 @@ a {
     background-color: #000;
 }
 
-.btn {
-    background-color: #fff;
-    color: rgba(6, 17, 7, 0.9);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-}
+button{
 
-.btn:hover {
-    background-color: #f9f9f9;
-}
-
-h1{
-    text-align: left;
-    font-size: 38px;
-    font-weight: 700;
-    text-decoration: underline;
 }

@@ -4,11 +4,7 @@
 }
 /* Global styles */
 body {
-    background-image: url("../images/signup.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.7);
-    background-blend-mode: overlay;
+    background-color: #0c210d;
 }
 
 /* Login container */
@@ -41,7 +37,7 @@ label {
     font-weight: bold;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input,select {
     padding: 10px;
     border: none;
     background-color: #f9f9f9;
@@ -49,31 +45,6 @@ input[type="text"], input[type="email"], input[type="password"] {
     border-radius: 5px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     font-size: 16px;
-}
-
-.upload-btn-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-}
-
-.btn2 {
-    padding: 10px;
-    border: none;
-    background-color: #f9f9f9;
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    color: gray;
-}
-
-.upload-btn-wrapper input[type=file] {
-    font-size: 10px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
 }
 
 /* Login button styles */
