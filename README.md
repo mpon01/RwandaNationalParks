@@ -1,6 +1,7 @@
 # RwandaNationalParks
-Documentation link: 
-Application link:
+Documentation link: https://docs.google.com/document/d/1Ekklis3aDu_FJ-va4v5JAgtqvrddYx6v-xaFWYEV9PQ/edit?usp=sharing
+
+Application link: https://rwanda-national-parks.herokuapp.com/
 
 Manual for Rwanda National Parks Application
 
