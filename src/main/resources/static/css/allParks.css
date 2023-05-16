@@ -4,8 +4,11 @@
 }
 
 body{
-    background-color: #f4f5ff;}
-
+    background-color: #f4f5ff;
+}
+p{
+    font-style: italic;
+}
 nav {
     background-color: #000;
     color: #fff;
@@ -48,24 +51,41 @@ a {
     background-color: #000;
 }
 
-.btn {
-    background-color: #fff;
-    color: rgba(6, 17, 7, 0.9);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-.btn:hover {
-    background-color: #f9f9f9;
-}
-
 h1{
     text-align: left;
-    font-size: 38px;
+    font-size: 40px;
     font-weight: 700;
     text-decoration: underline;
+}
+h3{
+    text-align: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+.bt2{
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+}
+
+img{
+    border-radius: 5px;
+}
+
+.p1{
+    text-align:center;
+    color:black;
+    font-size:18px;
+    font-weight:bolder;
+    display:flex;
+}
+
+.col1{
+    color:black;
+    height:200px;
+}
+
+.col2{
+    color:black;
+    height:200px;
 }

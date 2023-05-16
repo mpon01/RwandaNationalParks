@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Animals in Rwanda</title>
+  <link rel="stylesheet" th:href="@{../../css/allAnimals.css}" href="../../static/css/allAnimals.css">
+  <link rel="icon" th:href="@{../../images/logo.png}" href="../../static/images/logo.png">
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a th:href="@{/user/home}">Home</a></li>
+    <li class="dropdown">
+      <a href="#">View</a>
+      <ul>
+        <li><a th:href="@{/user/parks}">Parks in Rwanda</a></li>
+        <li><a th:href="@{/user/animals}">Animals in Rwanda</a></li>
+      </ul>
+    </li>
+    <li><a th:href="@{/user/book-visit}">Book a visit</a></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    <li>Welcome, [[${#request.userPrincipal.principal.username}]]</li>
+    <li>
+      <form th:action="@{/user/logout}" method="post">
+        <button type="submit" class="btn2">logout</button>
+      </form>
+    </li>
+  </ul>
+</nav>
+<br><br><br>
+<div style="text-align: right;">
+  <form action="/user/animals/search" method="GET">
+    <input type="text" name="search" placeholder="Search Animal">
+    <button type="submit" class="btn">Find</button>
+  </form>
+</div>
+
+<h1>Animals in Rwanda</h1>
+<br><br>
+<div class="grid-container">
+<div th:each="animal : ${animals}" class="grid-item">
+  <img th:src="@{${animal.animalPhoto}}" alt="Animal" class="image">
+  <div class="details">
+    <p th:text="${animal.animalName}" class="name"></p>
+    <p th:text="${animal.scientificName}" class="description"></p>
+    <p th:text="${animal.population}" class="description"></p>
+    <p th:text="${animal.parkName}" class="description"></p>
+  </div>
+</div>
+</div>
+
+<br><br>
+<div class="pagination">
+  <ul>
+    <li th:class="${currentPage == 0 ? 'disabled' : ''}">
+      <a th:href="@{/admin/dashboard(page=0)}">First</a>
+    </li>
+    <li th:class="${currentPage == 0 ? 'disabled' : ''}">
+      <a th:href="@{/admin/dashboard(page=__${currentPage - 1}__)}">Previous</a>
+    </li>
+    <li th:each="pageNumber : ${#numbers.sequence(0, totalPages - 1)}"
+        th:class="${pageNumber == currentPage ? 'active' : ''}">
+      <a th:href="@{/admin/dashboard(page=${pageNumber})}" th:text="${pageNumber + 1}"></a>
+    </li>
+    <li th:class="${currentPage == totalPages - 1 ? 'disabled' : ''}">
+      <a th:href="@{/admin/dashboard(page=__${currentPage + 1}__)}">Next</a>
+    </li>
+    <li th:class="${currentPage == totalPages - 1 ? 'disabled' : ''}">
+      <a th:href="@{/admin/dashboard(page=${totalPages - 1})}">Last</a>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

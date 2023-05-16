@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>User | Login</title>
     <link rel="stylesheet" th:href="@{../../css/login.css}" href="../../static/css/login.css">
+    <link rel="icon" th:href="@{../../images/logo.png}" href="../../static/images/logo.png">
 </head>
 <body>
 <div class="login-container">
@@ -19,10 +20,10 @@
             <div th:if="${param.error}">
                 <h4 style="color: #233f0c">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</h4>
             </div>
+            <a href="#">Forgot your password?</a><br>
             <button type="submit" class="btn">Log in ></button><br>
-            <a th:href="@{/user/sign-up}">New User? Sign Up</a>
+            <a th:href="@{/user/signup}">New User? Sign Up</a>
         </form>
     </div>
-</div>
 </body>
 </html>
