@@ -36,14 +36,9 @@ public class Animal implements Serializable {
     @Column(name = "parkName", nullable = false)
     private String parkName;
 
-    @Transient
-    private MultipartFile animalPhoto;
     @Lob
-    @Column(name = "animalPhoto", columnDefinition = "mediumblob")
-    private byte[] photo;
-
-    @Column(name = "fileName")
-    private String fileName;
+    @Column(name = "image", length = Integer.MAX_VALUE, nullable = true)
+    private byte[] image;
 
 
     @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

@@ -28,12 +28,11 @@ public class DatabaseLoader {
             User user2 = new User("Papiti","papiti@gmail.com","papiti123",Role.ADMIN);
             User user3 = new User("Okwaci","okwaci@gmail.com","okwaci123",Role.USER);
             User user4 = new User("Nyilek","nyilek@gmail.com","nyilek123",Role.USER);
-//            userRepo.saveAll(List.of(user1,user2,user3,user4));
-            userService.createUser(user1);
-            userService.createUser(user2);
+            userService.createAdmin(user1);
+            userService.createAdmin(user2);
             userService.createUser(user3);
             userService.createUser(user4);
-            System.out.println("Sample database initialized");
+            System.out.println("Sample database created");
         };
     }
 }

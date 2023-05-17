@@ -8,8 +8,8 @@
 </head>
 <body>
 <div class="login-container">
+    <h4><a href="#" onclick="history.back();">Go back</a></h4>
 <h2>REGISTER A NEW PARK</h2>
-<h4><a href="#" onclick="history.back();">Go back</a></h4>
 <br>
 <form th:action="@{/admin/add-park}" th:object="${park}" method="post" >
     <div class="form-group">

@@ -32,14 +32,6 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-//    @Transient
-//    private MultipartFile profilePhoto;
-//    @Lob
-//    @Column(name = "photo", columnDefinition = "mediumblob")
-//    private byte[] photo;
-//
-//    @Column(name = "fileName")
-//    private String fileName;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<Visit> visits = new ArrayList<>();

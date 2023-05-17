@@ -1,24 +1,16 @@
 package com.mer.RWANDAPARKS.service;
 
-import com.mer.RWANDAPARKS.exceptions.UserNotFoundException;
-import com.mer.RWANDAPARKS.model.Animal;
 import com.mer.RWANDAPARKS.model.Role;
 import com.mer.RWANDAPARKS.model.User;
 import com.mer.RWANDAPARKS.repository.AnimalRepo;
 import com.mer.RWANDAPARKS.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.transaction.Transactional;
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,24 +28,19 @@ public class UserService implements IUserService, UserDetailsService {
 
 
     @Override
-    public User createUser(User user) {
+    public void createUser(User user) {
         String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-//        user.setRole(Role.USER);
-//        if (!profilePhoto.isEmpty()) {
-//            String contentType = profilePhoto.getContentType();
-//            if (contentType.equals("image/jpeg") || contentType.equals("image/jpg") || contentType.equals("image/png")) {
-//                try {
-//                    byte[] photo = profilePhoto.getBytes();
-//                    user.setPhoto(photo);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            } else {
-//                throw new IllegalArgumentException("Only JPG/JPEG and PNG photos allowed.");
-//            }
-//        }
-        return userRepo.save(user);
+        user.setRole(Role.USER);
+        userRepo.save(user);
+    }
+
+    @Override
+    public void createAdmin(User user) {
+        String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        user.setRole(Role.ADMIN);
+        userRepo.save(user);
     }
 
     @Override

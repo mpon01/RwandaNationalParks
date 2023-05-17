@@ -20,10 +20,8 @@
             <div class="form-group">
                 <input type="password" name="password" placeholder="Password" required>
             </div>
-
-            <div class="upload-btn-wrapper">
-                <button class="btn2">Add Profile photo</button>
-                <input type="file" name="image" accept="image/png, image/jpg, image/jpeg" required />
+            <div class="form-group">
+                <input type="password" name="password2" placeholder="Confirm Password" required>
             </div>
             <div th:if="${param.error}">
                 <h4 style="color: #233f0c">Error creating account.</h4>

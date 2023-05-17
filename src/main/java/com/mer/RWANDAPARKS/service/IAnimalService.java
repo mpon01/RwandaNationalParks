@@ -12,7 +12,8 @@ import java.util.Optional;
 
 public interface IAnimalService {
 
-    Animal saveAnimal(Animal animal, MultipartFile multipartFile);
+    void saveAnimal(Animal animal);
+//    Animal saveAnimal(Animal animal, MultipartFile multipartFile);
     Animal editAnimal(Animal animal, MultipartFile multipartFile);
 
     void deleteAnimal(int id);

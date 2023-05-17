@@ -19,8 +19,8 @@ public class MainController {
     @GetMapping("/user/login")
     public String viewUserLoginPage(){return "user/user_login";}
 
-    @GetMapping("/user/home")
-    public String viewUserHomePage(){return "user/user_home";}
+//    @GetMapping("/user/home")
+//    public String viewUserHomePage(){return "user/user_home";}
 
     @GetMapping("/user/signup")
     public String viewUserSignupPage(Model model){

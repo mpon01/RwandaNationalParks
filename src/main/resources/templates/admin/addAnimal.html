@@ -8,18 +8,14 @@
 </head>
 <body>
 <div class="login-container">
+    <h4><a href="#" onclick="history.back();">Go back</a></h4>
 <h2>NEW ANIMAL</h2><br>
 <form th:action="@{/admin/add-animal}" th:object="${animal}" method="post" enctype="multipart/form-data">
-    <label>Common Name:</label>
-    <input type="text" th:field="*{animalName}"  name="animalName" /> <br>
-    <label>Scientific Name:</label>
-    <input type="text" th:field="*{scientificName}" name="scientificName" /> <br>
-    <label>Population:</label>
-    <input type="text" th:field="*{population}" name="population" /> <br>
-    <br>
-    <label>Animal's Park:</label>
+    <input type="text" th:field="*{animalName}"  name="animalName" placeholder="Common Name" /> <br>
+    <input type="text" th:field="*{scientificName}" name="scientificName" placeholder="Scientific Name"/> <br>
+    <input type="text" th:field="*{population}" name="population" placeholder="Population" /> <br>
     <select th:field="*{parkName}" name="animalParkName"  >
-        <option value=""></option>
+        <option value="">Park Name</option>
         <option value="Akagera">Akagera National Park</option>
         <option value="Nyungwe">Nyungwe National Park</option>
         <option value="Volcanoes">Volcanoes National Park</option>
@@ -28,8 +24,7 @@
     <label>Animal Image:</label>
     <input type="file" th:field="*{photo}" name="animalImage" accept=".jpg,.jpeg,.png" >
     <br><br>
-    <button type="submit">Register</button><br>
-    <button><a th:href="@{/admin/home}">Go back to admin control panel.</a></button>
+    <button type="submit" class="btn">Register</button><br>
 </form>
 </div>
 </body>

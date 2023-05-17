@@ -20,6 +20,7 @@
             <li><a th:href="@{/user/book-visit}">Book a visit</a></li>
             <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
             <li>Welcome, [[${#request.userPrincipal.principal.username}]]</li>
+
             <li>
                 <form th:action="@{/user/logout}" method="post">
                     <button type="submit" class="btn">logout</button>
@@ -31,11 +32,15 @@
     <h1>My VISITS</h1>
     <table>
         <tr th:each="visit : ${visit}">
-            <th>Name:</th>
-            <td th:text="${person.name}"></td>
+            <th>Park Name:</th>
+            <td th:text="${visit.parkName}"></td>
         </tr>
-        <tr th:each="person : ${persons}">
-            <th>Age:</th>
+        <tr th:each="visit : ${visit}">
+            <th>Visit Date:</th>
+            <td th:text="${visit.visitDate}"></td>
+        </tr>
+        <tr th:each="visit : ${visit}">
+            <th>Visit Time:</th>
             <td th:text="${person.age}"></td>
         </tr>
     </table>

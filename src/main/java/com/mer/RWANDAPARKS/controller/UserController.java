@@ -101,17 +101,17 @@ public class UserController {
         mailSender.send(message);
     }
 
-//    @PostMapping("/user/home")
-//    public String viewUserHomePage(Model model, HttpSession session){
-//        String userId = (String) session.getAttribute("userId");
-//        if(userId == null){
-//            return "redirect:/user/login";
-//        }
-//        List<Visit> visits = visitService.getAll(Long.valueOf(userId));
-//        model.addAttribute("visit", visits);
-//        System.out.println("User: "+session.getAttribute("userId"));
-//        return "user/user_home";
-//    }
+    @GetMapping("/user/home")
+    public String viewUserHomePage(Model model, HttpSession session){
+        String userId = (String) session.getAttribute("userId");
+        if(userId == null){
+            return "redirect:/user/login";
+        }
+        List<Visit> visits = visitService.getAll(Long.valueOf(userId));
+        model.addAttribute("visit", visits);
+        System.out.println("User: "+session.getAttribute("userId"));
+        return "user/user_home";
+    }
     @GetMapping("/user/book-visit")
     public String viewVisitPage(Model model){
         Visit visit = new Visit();

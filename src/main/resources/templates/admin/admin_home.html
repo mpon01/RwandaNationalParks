@@ -9,6 +9,7 @@
     <div class="dashboard-container">
         <div class="side-panel">
             <h4>[[${#request.userPrincipal.principal.username}]]</h4>
+
             <h4>Admin</h4>
             <hr>
             <ul class="menu-list">
@@ -25,6 +26,7 @@
                         <li><a th:href="@{/admin/show-animals}">Show Animals</a></li>
                     </ul>
                 </li>
+                <li><button class="btn"><a th:href="@{/admin/logout}">logout</a></button></li>
             </ul>
         </div>
         <div class="content">
@@ -38,42 +40,59 @@
                         <th>Park Name</th>
                         <th>Location</th>
                         <th>Entrance Fee</th>
-                        <th>Manufactured date</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
-                    <tr th:each="park, row : ${park}" th:class="${row.odd}? 'odd' : 'even'">
-                        <td th:text="${park.plateNumber}"></td>
-                        <td th:text="${park.model}"></td>
-                        <td th:text="${park.mark}"></td>
-                        <td th:text="${park.manufacturedDate}"></td>
-                        <td><a th:href="@{/vehicle/updateForm(id=${vehicle.id})}">Edit</a>&nbsp;&nbsp;
-                            <a th:href="@{/vehicle/deleteForm(id=${vehicle.id})}">Delete</a></td>
+                    <tr th:each="park, row : ${parks}" th:class="${row.odd}? 'odd' : 'even'">
+                        <td th:text="${park.parkName}"></td>
+                        <td th:text="${park.location}"></td>
+                        <td th:text="${park.entranceFee}"></td>
+                        <td th:text="${park.description}"></td>
+                        <td><a th:href="@{/admin/edit-park(id=${park.id})}">Edit</a>&nbsp;&nbsp;
+                            <a th:href="@{/admin/delete-park(id=${park.id})}">Delete</a></td>
                     </tr>
                 </table>
             </div>
             <br><br>
             <h3>Animals</h3>
             <div class="divs">
-                <table class="center">
-                    <tr>
-                        <th>Common Name</th>
-                        <th>Scientific Name</th>
-                        <th>Population</th>
-                        <th>Park</th>
-                        <th>Image</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr th:each="park, row : ${animals}" th:class="${row.odd}? 'odd' : 'even'">
-                        <a th:href="@{/admin/animal/download/{id}(id=${model.id})}">Download</a>
-                        <td th:text="${park.plateNumber}"></td>
-                        <td th:text="${park.model}"></td>
-                        <td th:text="${park.mark}"></td>
-                        <td th:text="${park.manufacturedDate}"></td>
-                        <td><a th:href="@{/vehicle/updateForm(id=${vehicle.id})}">Edit</a>&nbsp;&nbsp;
-                            <a th:href="@{/vehicle/deleteForm(id=${vehicle.id})}">Delete</a></td>
-                    </tr>
-                </table>
+            <table id="example" class="table table-striped table-bordered text-center">
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Common Name</th>
+                    <th>Scientific Name</th>
+                    <th>Population</th>
+                    <th>Park Name</th>
+                    <th>View</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each = "animal, hh : ${animals}">
+                    <td><img th:src="@{${'/admin/display-image/'+ animal.id}}"
+                             class="card img-fluid" style="width:300px" alt=""/></td>
+                    <td th:text="${animal.animalName}"></td>
+                    <td th:text="${animal.scientificName}"></td>
+                    <td th:text="${animal.population}"></td>
+                    <td th:text="${animal.parkName}"></td>
+                    <td><a th:href="@{/admin/imageDetails(id=${animal.id})}" class="btn btn-info text-right" target="_blank">View</a></td>
+                    <td><a th:href="@{/admin/update-animal(id=${animal.id})}">Edit</a>&nbsp;&nbsp;
+                        <a th:href="@{/admin/delete-animal(id=${animal.id})}">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
             </div>
+
+<!--            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--            <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>-->
+<!--            <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>-->
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#example').DataTable();
+                } );
+            </script>
+
         </div>
 
     </div>
